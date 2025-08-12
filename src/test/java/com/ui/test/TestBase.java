@@ -1,6 +1,7 @@
 package com.ui.test;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import org.testng.Reporter;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -27,10 +28,10 @@ public class TestBase {
 	 public void setUp(
 				@Optional("chrome") String browser, 
 				@Optional("false") boolean isLambdaTest, 
-				@Optional("true") boolean isHeadless, 
-				ITestResult result) {
+				@Optional("true") boolean isHeadless) {
 		  
-		  this.isLambdaTest=isLambdaTest;
+		 ITestResult result = Reporter.getCurrentTestResult(); 
+		 this.isLambdaTest=isLambdaTest;
 		  
 		 WebDriver lambdaDriver;
 		 if (isLambdaTest) {
