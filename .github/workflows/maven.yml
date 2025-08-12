@@ -54,6 +54,7 @@ jobs:
        path: screenshots/
 
     - name: Test execution Status
+      if: always()
       run: echo "Test Execution completed"
        
        
