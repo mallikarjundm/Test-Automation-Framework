@@ -57,7 +57,19 @@ jobs:
       if: always()
       run: echo "Test Execution completed"
        
+    run :
+       mkdir -p public/extent-reports 
+       cp -R report.html public/extent-reports/ 
+       cp -R screenshots/ public/extent-reports/screenshots/
+       1s -1
        
+  - name: Deploy 
+    if: always()
+    uses: JamesIves/github-pages-deploy-action@v4 
+    with:
+      folder: public/extent-reports/ 
+      token: ${ secrets.PAT }}
+      clean: true
        
    
 
