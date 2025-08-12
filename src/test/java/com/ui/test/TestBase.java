@@ -54,8 +54,8 @@ public class TestBase {
 			 LambdaTestUtility.quitSession();
 		 }
 		 else {
-			 homepage.quit();
-		 }
+		        BrowserUtility.quitBrowser(); // or DriverFactory.quitDriver()
+		    }
 	 }
 
 }
