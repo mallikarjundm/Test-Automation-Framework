@@ -51,12 +51,12 @@ public class TestBase {
         return homepage;
     }
 
-//    @AfterMethod(description = "Tear down the browser")
-//    public void tearDown() {
-//        if (isLambdaTest) {
-//            LambdaTestUtility.quitSession();
-//        } else {
-//            BrowserUtility.quitBrowser(); // or DriverFactory.quitDriver()
-//        }
-//    }
+    @AfterMethod(description = "Tear down the browser")
+    public void tearDown() {
+        if (isLambdaTest) {
+            LambdaTestUtility.quitSession();
+        } else {
+            BrowserUtility.quitBrowser(); // or DriverFactory.quitDriver()
+        }
+    }
 }
